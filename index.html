@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <title>SoundClub</title>
+    <script defer
+        src="https://kit.fontawesome.com/cf72411f90.js" 
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/intro.js"></script>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar__wrap">
+            <ul class="navbar__items">
+                <li class="navbar__item__logo">
+                    <h1><a href="index.html">SoundClub</a></h1>
+                </li>
+                <li class="navbar__item__list">
+                    <div class="navbar__item__list__wrap">
+                        <div class="navbar-menu"><a class="navbar-menu" href="pages/calendar.html">일정</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="pages/reservation.html">예약하기</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="pages/notice.html">공지사항</a></div>
+                        <div class="navbar-managing display-none"><a class="navbar-menu" href="pages/manage.html">회원관리</a></div>
+                    </div>
+                </li>
+                <li class="navbar__item__sign">
+                    <a class="navbar__login" href="pages/login.html"><span>Sign In</span></a>
+                    <a class="navbar__logout display-none" href=""><span>Sign Out</span></a>
+                </li>
+            </ul>
+            <div class="navbar__menutrigger">
+                <button class="navbar__menutrigger__button"">
+                    <i class=" fa-solid fa-bars fa-xl"></i>
+                </button>
+                <div class="navbar__menuback__button"><h2>X</h2></div>
+            </div>
+        </div>
+    </nav>
+    
+<main id="main" class="main__content">
+    <section class="intro__section first-section">
+        <div class="intro__title">
+            <span>Welcome</span>
+        </div>
+        <div class="intro__icon">
+            <i class="fa-sharp fa-solid fa-angles-down fa-2xl"></i>
+        </div>
+    </section>
+</main>
+
+
+<footer id="footer">
+    <div class="footer__wrapper display-flex flex-items-center flex-content-between">
+        <a class="footer__logo" href="">SOUND<br>CLUB</a>
+        <div class="footer__info">
+            <p>Seoul, South Korea. <br>Contact us : yerang@seoultech.ac.kr</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

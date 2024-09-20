@@ -1,0 +1,32 @@
+.userqueue-section{
+    margin: 42px 24px;
+    width: min(1024px, 90vw);
+}
+.userdata-section{
+    margin: 42px 24px;
+    width: min(1024px, 90vw);
+} 
+table { 
+    text-align: center;
+    width: 100%;
+    border: 2px solid rgb(136, 136, 136);
+    height: 30vh;
+    overflow-y:scroll;
+}
+
+th {
+    border-bottom: 2px solid rgb(136, 136, 136);
+}
+
+button {
+    margin-top: 12px;
+    border-radius: 4px;
+    height: 28px;
+    width: 96px;
+    background-color:  #3d3d3d;
+    border: 1px solid  #2B2B2B;
+    font-size:14px; font-weight: bold;
+    color: white;
+    box-sizing:content-box;
+    user-select: auto;
+}

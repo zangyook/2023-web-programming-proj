@@ -1,0 +1,39 @@
+.intro__section {
+    background-color:  var(--nav-background-color); opacity:1;
+    height: 100%;
+}
+    .intro__title {
+        padding-top: 40vh;
+        padding-bottom: 96px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .intro__title span {
+        margin:0; 
+        font-size: min(15vw, 164px);
+        
+        font-weight: 500;
+        color: var(--nav-text-color);
+        display: flex;         
+        align-items: center;
+        justify-content: center;
+    }
+    .intro__icon {
+        padding: 16px 32px;
+        width: 42px;
+        margin: 0 auto;
+    }
+    .fa-angles-down {
+        color: #949494;
+        animation: motion 1s both linear infinite;
+    }
+
+    @keyframes motion{
+        0% {transform: translateY(0px) translateX(0);}
+        25% {transform: translateY(5px) translateX(0);}
+        50% {transform: translateY(10px) translateX(0);}
+        75% {transform: translateY(5px) translateX(0);}
+        100% {transform: translateY(0px) translateX(0);}
+    }

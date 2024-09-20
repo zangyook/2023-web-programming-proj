@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <title>RESERVATION</title> 
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/reservation.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script>
+        isUser();
+        function isUser() {
+            if (sessionStorage.getItem("login")==0) {
+                alert("회원 전용 페이지입니다.");
+                location.href = "../index.html";
+                return
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar__wrap">
+            <ul class="navbar__items">
+                <li class="navbar__item__logo">
+                    <h1><a href="../index.html">SoundClub</a></h1>
+                </li>
+                <li class="navbar__item__list">
+                    <div class="navbar__item__list__wrap">
+                        <div class="navbar-menu"><a class="navbar-menu" href="calendar.html">일정</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="reservation.html">예약하기</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="notice.html">공지사항</a></div>
+                        <div class="navbar-managing display-none"><a class="navbar-menu" href="manage.html">회원관리</a></div>
+                    </div>
+                </li>
+                <li class="navbar__item__sign">
+                    <a class="navbar__login" href="login.html"><span>Sign In</span></a>
+                    <a class="navbar__logout display-none" href=""><span>Sign Out</span></a>
+                </li>
+            </ul>
+            <div class="navbar__menutrigger">
+                <button class="navbar__menutrigger__button"">
+                    <i class=" fa-solid fa-bars fa-xl"></i>
+                </button>
+                <div class="navbar__menuback__button"><h2>X</h2></div>
+            </div>
+        </div>
+    </nav>
+    
+<main id="main">
+    <section class="book__section">
+        <div class = "bookWrap">
+            <div class="book__title">
+                일정 선택 
+            </div> 
+            <div class="book__calendar">
+                <div class="calendar">
+                    <div class = "cal__nav">
+                        <button class="todayBtn">오늘</button>
+                        <button class="nextBtn">></button>
+                        <div class = "cal__title"></div>
+                    </div>
+                    
+                    <div class = "calendar__wrap">
+                        <div role="row" class="calendar__header">
+        
+                        </div>
+                        <div role="presentation" class="calendar__contents"></div>
+                    </div>
+            </div>
+            <div class="book__timeSelector">
+                <div class="timeSelector__date"></div>
+                <div class="timeSelector__controller">
+                    <button class="timeMoveBtn left"><<</button>
+                    <ul></ul>
+                    <button class="timeMoveBtn right">>></button>
+                </div>
+            </div>
+            <div class="book__count">
+            <input type="submit" class="bk__btn" value="다음단계">
+            </div>
+
+
+            <div class="booking__popup display-none">
+                <div class="frm__nav">
+                    <span>예약하기</span>
+                    <button id="closeBtn">X</button>
+                </div>
+                <div id="popup1">
+                        <div class="inner__wrap">
+                            <ul>
+                                <li>예약 우선순위<br>1. 파트 레슨<br>2. 합주<br>3. 개인 사용자</li>
+                                <li>동아리방 사용 수칙<br>
+                                    1. 동방 퇴실 시 각 앰프 전원, 멀티탭, 전등이 꺼져있는지 확인하신 후 퇴실해주세요.<br>
+                                    2. 앰프 사용 후 볼륨이 0인지 확인하시길 바랍니다.<br>
+                                    3. 음식 반입은 가능하지만, 퇴실 시 꼭! 정리하고 나가시길 바랍니다.
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="checkBtn">확인</button>
+                </div>
+                <div id="popup2">
+                    <div class="p2__date"></div>
+                    <form id="form" class="p2__input">
+                        <div id="Rtype">
+                            <div>유형</div> 
+                            <ul>
+                                <li><label ><input name='RT' type='checkbox' value="1" onclick="toggleCheck(this)">커리</label></li>
+                                <li><label ><input name='RT' type='checkbox' value="2" onclick="toggleCheck(this)">합주</label></li>
+                                <li><label ><input name='RT' type='checkbox' value="3" onclick="toggleCheck(this)">개인</label></li>
+                            </ul></div>
+                        <div><div>예약자</div><input id="pName" type='text'></div>
+                        <div><div>전화번호</div><input id="pNumber" type="tel"> </div>
+                        <div id="companion">
+                            <div>동반자</div>
+                            <div>
+                                <input id="addInput" type="text" placeholder="">
+                                <button class="display-none">+</button>
+                            </div>
+
+                        </div>
+                    
+                        <div class="goBtn">
+                            <input type='submit' value="신청">
+                        </div>
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer">
+    <div class="footer__wrapper display-flex flex-items-center flex-content-between">
+        <a class="footer__logo" href="">SOUND<br>CLUB</a>
+        <div class="footer__info">
+            <p>Seoul, South Korea. <br>Contact us : yerang@seoultech.ac.kr</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

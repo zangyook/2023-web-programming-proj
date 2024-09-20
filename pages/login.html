@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Loginpage</title> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/login.js"></script>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar__wrap">
+            <ul class="navbar__items">
+                <li class="navbar__item__logo">
+                    <h1><a href="../index.html">SoundClub</a></h1>
+                </li>
+                <li class="navbar__item__list">
+                    <div class="navbar__item__list__wrap">
+                        <div class="navbar-menu"><a class="navbar-menu" href="calendar.html">일정</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="reservation.html">예약하기</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="notice.html">공지사항</a></div>
+                        <div class="navbar-managing display-none"><a class="navbar-menu" href="manage.html">회원관리</a></div>
+                    </div>
+                </li>
+                <li class="navbar__item__sign">
+                    <a class="navbar__login" href="login.html"><span>Sign In</span></a>
+                    <a class="navbar__logout display-none" href=""><span>Sign Out</span></a>
+                </li>
+            </ul>
+            <div class="navbar__menutrigger">
+                <button class="navbar__menutrigger__button"">
+                    <i class=" fa-solid fa-bars fa-xl"></i>
+                </button>
+                <div class="navbar__menuback__button"><h2>X</h2></div>
+            </div>
+        </div>
+    </nav>
+
+<main>
+    <section class="login__section">
+        <div class="login__wrap">
+            <h1>회원님의 아이디와 비밀번호를 입력하세요.</h1>
+            <p class="display-flex flex-content-center display-none">[[관리자 모드]]<br>ID : admin <br> PASSWORD : 0000</p>
+            <form class="frm" name="frm" action="../index.html">
+                <input id="user-id" name="userId" type="text" placeholder="아이디">
+                <input id="user-pwd" name="userPwd" type="password" placeholder="비밀번호">
+                <button class="login__btn">로그인</button> 
+            </form>
+            <a class="signup" href="">회원가입</a>
+        </div>
+        <div class="popup2 display-none">
+            <div class="popup2__nav">
+                <button id="closeBtn2">X</button>
+            </div>
+            <h2>**안내** 기본 계정 정보입니다. '아이디/비밀번호'</h2>
+            <ul>
+               <li>1. 관리자계정(admin): admin / 0000 </li>  
+               <li>2. 일반회원계정(member): memberOne / 0000 </li> 
+            </ul>
+        </div>
+        <div class="popup display-none">
+            <div class="popup__nav">
+                <button id="closeBtn">X</button>
+            </div>
+            <div class="popup__contents" style="overflow-y:scroll"> 
+                <div class="popup__wrap">
+                <form class="frm2" name="frm2">
+                    <div class="frm-title">회원가입</div>
+                    <div class="id">
+                        <input id="signup__id" name="userId" type="text" placeholder="아이디">
+                        <button class="idcheck" type="button">중복확인</button>
+                    </div>
+                    <div class="pw">
+                    <div><input id="signup__pwd" name="userPwd" type="password" placeholder="비밀번호"></div>
+                    <div><input id="signup__pwd2" name="userPwd2" type="password" placeholder="비밀번호 확인"></div>
+                    </div>
+                    <fieldset class="user__info">
+                        <legend>개인정보</legend>
+                        <div><input id="user__name" type="text" placeholder="이름"></div>
+                        <div><input id="user__stnum" type="text" placeholder="학번"></div>
+                        <div><input id="user__tel" type="tel" placeholder="전화번호"></div>
+                        <div>
+                            <label>기수:</label> 
+                            <select id="user__class">
+                                <option value="">==</option>
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                                <option value="1">7</option><option value="8">8</option><option value="9">9</option>
+                                <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                                <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>파트:</label>
+                            <select id="user__part">
+                                <option value="">==</option>
+                                <option value="보컬">보컬</option>
+                                <option value="기타">기타</option>
+                                <option value="베이스">베이스</option>
+                                <option value="키보드">키보드</option>
+                                <option value="드럼">드럼</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="가입하기"></button> 
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer">
+    <div class="footer__wrapper display-flex flex-items-center flex-content-between">
+        <a class="footer__logo" href="">SOUND<br>CLUB</a>
+        <div class="footer__info">
+            <p>Seoul, South Korea. <br>Contact us : yerang@seoultech.ac.kr</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

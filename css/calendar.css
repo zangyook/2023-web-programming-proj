@@ -1,0 +1,272 @@
+:root {
+    --hairline: rgb(199, 199, 199);
+    --nav-height: 54px;
+    --block-color: rgb(236, 236, 236);
+    --grey:rgb(196, 245, 155); 
+}
+
+
+.calendar {
+
+    height: 80vh;
+    max-width:1024px;
+    display: flex;
+    margin : 7vh auto;
+    flex-direction: column;
+    padding: 0 12px;
+
+}
+
+/*===============캘린더 상단 버튼+월======================*/
+.cal__nav {
+    margin: 0;
+    display: flex;
+    flex: none;
+    height: 32px;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    width: 100%;
+}
+    .prevBtn, .nextBtn {
+        border-radius: 4px;
+        height: 36px;
+        width: 36px;
+        background-color: #2B2B2B;
+        border: 1px solid  #2B2B2B;
+        color: white;
+        margin-left: 8px;
+        font-size:24px;
+        box-sizing: border-box;
+    }
+    .todayBtn {
+        border-radius: 4px;
+        height: 36px;
+        width: 44px;
+        background-color: white;
+        border: 1px solid  #2B2B2B;
+        margin-left: 8px;
+        font-size:18px; 
+        box-sizing: border-box;
+    }
+    .modifyBtn {
+        border-radius: 4px;
+        height: 36px;
+        width: 72px;
+        background-color: rgb(196, 245, 155); 
+        border: 1px solid  #b3b3b3;
+        margin-left: 8px;
+        font-size:16px; 
+        box-sizing: border-box;
+    }
+    .submitBtn, .backBtn {
+        border-radius: 4px;
+        height: 36px;
+        width: 42px;
+        background-color: rgb(196, 245, 155); 
+        border: 1px solid  #b3b3b3; 
+        margin-left: 16px;
+        font-size:16px; 
+        box-sizing: border-box;
+    }
+    .todayBtn:hover, .prevBtn:hover, .nextBtn:hover, .modifyBtn:hover{
+        border: 2.5px solid rgb(196, 245, 155); 
+    }
+
+
+
+    .cal__title {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+    }
+
+
+
+
+
+/*===============캘린더 그리드======================*/
+
+
+.calendar__wrap {
+    
+    width: 100%;
+    border-left : var(--hairline) 1px solid;
+    border-top:  var(--hairline) 1px solid;
+}
+.calendar__header {
+    margin: 0 ; 
+    display: flex;
+    flex: none;
+    align-items: stretch;
+    height: 25px;
+}
+    .calendar__header > div {
+        text-align: center;
+        flex: 1 1 0%;
+        border-bottom: var(--hairline) 1px solid;
+        border-right:  var(--hairline) 1px solid;
+    }
+.calendar__contents {
+    margin:0 ;
+    height: calc(100% - 25px);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
+    .weekRow { 
+        position: relative;
+        border-bottom: var(--hairline) 1px solid;
+        display: flex;
+        height: 120px;
+        align-items: stretch;
+        flex-direction: row;
+    }
+    .dayBox {
+        text-align: center;
+        flex: 1 1 0%;
+        border-right:  var(--hairline) 1px solid;
+    }
+    .dayBox > .date {
+        color: grey;
+    }
+    .dayBox.available > .date{
+        color: black;
+    }
+    .boxActive {
+        background-color: var(--block-color);
+    }
+
+    .weekRow > .date {
+        position: absolute;
+        display: flex;
+        z-index: 3;
+        width: 100%;
+    }
+    .weekRow > .todo {
+        margin-top: 35px;
+        display: flex;
+        position: relative;
+        font-size: 24px;
+        width: 100%;
+    }
+
+
+    .date > div {
+        text-align: center;
+        line-height: 35px;
+        border-right: var(--hairline) 1px solid;
+        flex: 1 1 0%;
+
+    }
+    .calendar__details {
+        margin: 24px 0;
+        height: 120px;
+        border: 1px solid var(--hairline);
+    }
+    .calendar__details .details__title {
+        border-bottom: 1px dashed var(--hairline);
+    }
+    .calendar__popup {
+        background-color: white;
+        border-radius: 4px;
+        padding: 4 24px;
+        padding-bottom: 24px;
+        border : 2px outset var(--grey);
+        align-items: flex-start;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+    }
+    .calendar__board {
+        width: min(1024px,70vw);
+        height: 40vh;
+        position: absolute;
+        top:0;
+        transform: translate(0,30%);
+        border: 2px solid var(--grey);
+        background-color: white;
+        align-items: flex-start;
+        flex-direction: column;
+        top: 0;
+    }
+
+    /*=======내용상세히팝업========*/
+    .board__nav {
+        width: 100%;
+        height: 36px;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--grey);
+    }
+    .board__nav > button {
+        padding:0 6px;
+        margin-right: 16px;
+        border: none;
+        background-color: var(--grey);
+        font-size: 24px;
+    }
+    .board__nav > button:hover {
+        background-color: rgb(110, 212, 27);
+        border-radius: 70%;
+    }
+
+    .tododata:hover {
+        background-color: var(--grey);
+        border-radius: 10%;
+    }
+
+    .board__contents {
+        padding: 32px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .board__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 42px;
+        font-weight: bolder;
+        padding-bottom: 24px;
+    }
+    .board__contents div {
+        padding-bottom: 24px;
+    }
+    .board__detail {
+        width: 80%;
+        height: 15vh;
+        text-align: center;
+        justify-content: center;
+        padding-bottom: 24px;
+        padding: 48px 64px;
+        /*background-color:  rgb(246, 248, 243);*/ 
+    }
+    .popup__nav {
+        display: flex;
+        justify-content: right;
+        padding: 4px 0;
+    }
+    .dismissBtn {
+        background-color: white;
+        border: none;
+        padding: 2px 6px;
+        margin-right: 8px;
+        font-size: 14px;
+    }
+
+    .dismissBtn:hover {
+        background-color: rgb(206, 206, 206);
+        border-radius: 70%;
+    }
+    .popup__frm {
+        padding: 0 12px;
+        padding-top: 4px;
+    }
+
+@media screen and (max-width: 833px) {
+
+}

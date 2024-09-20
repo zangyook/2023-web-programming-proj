@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+    <title>Calendar</title> 
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/calendar.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> 
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar__wrap">
+            <ul class="navbar__items">
+                <li class="navbar__item__logo">
+                    <h1><a href="../index.html">SoundClub</a></h1>
+                </li>
+                <li class="navbar__item__list">
+                    <div class="navbar__item__list__wrap">
+                        <div class="navbar-menu"><a class="navbar-menu" href="calendar.html">일정</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="reservation.html">예약하기</a></div>
+                        <div class="navbar-menu"><a class="navbar-menu" href="notice.html">공지사항</a></div>
+                        <div class="navbar-managing display-none"><a class="navbar-menu" href="manage.html">회원관리</a></div>
+                    </div>
+                </li>
+                <li class="navbar__item__sign">
+                    <a class="navbar__login" href="login.html"><span>Sign In</span></a>
+                    <a class="navbar__logout display-none" href=""><span>Sign Out</span></a>
+                </li>
+            </ul>
+            <div class="navbar__menutrigger">
+                <button class="navbar__menutrigger__button"">
+                    <i class=" fa-solid fa-bars fa-xl"></i>
+                </button>
+                <div class="navbar__menuback__button"><h2>X</h2></div>
+            </div>
+        </div>
+    </nav>
+    
+<main id="main">
+    <section class="calendar__section">
+        <div class="calendar">
+            <div class = "cal__nav">
+                <button class="prevBtn"><</button>
+                <button class="todayBtn">오늘</button>
+                <button class="nextBtn">></button>
+                <div class = "cal__title"></div>
+                <button class="modifyBtn display-none">수정하기</button>
+                <div class="doneBtn display-none">
+                    <button class="submitBtn">완료</button>
+                    <button class='backBtn'>취소</button>
+                </div>
+
+            </div>
+            
+            <div class = "calendar__wrap">
+                <div role="row" class="calendar__header">
+
+                </div>
+                <div role="presentation" class="calendar__contents"></div>
+                <div class="calendar__board display-none">
+                    <div class="board__nav">
+                        <button>X</button>
+                    </div>
+                    <div class="board__contents">
+                    </div>
+                </div>
+                <div class="calendar__popup display-none">
+                    <div class="popup__nav">
+                        <button class="dismissBtn">X</button>
+                    </div>
+                    <form id="form" class="popup__frm">
+                        <input type="text" placeholder="제목 추가">
+                        <div>
+                            <input name="dates"> 
+                            <select name="datetime"></select> 
+                            <label ><input type='checkbox'>종일</label>
+                        </div>
+                        <input type="text" placeholder="상세 내용">
+                        <input type="submit" id='submit' value="추가">
+                        <input type="button" id='fineBtn' value="수정">  
+                        <input type="button" id='deleteBtn' value="삭제">  
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <figure id='BACKGROUND' class="active display-none">
+            <i class="fa-solid fa-guitar" style="color: #284d23;"></i>
+            <i class="fa-solid fa-guitar fa-spin fa-spin-reverse" style="color: #284d23;"></i>
+            <i class="fa-solid fa-drum" style="color: #1f5125;"></i>
+            <i class="fa-solid fa-music"></i>
+            <i class="fa-solid fa-play" style="color: #2f4c2a;"></i>
+        </figure>
+    
+    </section>
+</main>
+<footer id="footer">
+    <div class="footer__wrapper display-flex flex-items-center flex-content-between">
+        <a class="footer__logo" href="">SOUND<br>CLUB</a>
+        <div class="footer__info">
+            <p>Seoul, South Korea. <br>Contact us : yerang@seoultech.ac.kr</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
